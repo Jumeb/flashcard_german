@@ -4,6 +4,7 @@ import Input from "@/components/atoms/Inputs/Input.component";
 import { isNumbersOnly } from "@/utils/libs/validator";
 import SwitchInput from "@/components/atoms/Inputs/Switch.component";
 import ButtonAtom from "@/components/atoms/Button/Button";
+import { MyForm } from "@/components/organism/Learn/Learn.organism";
 
 const SettingsFormMolecule: React.FC<FormProps> = ({
   formdata,
@@ -89,13 +90,7 @@ const SettingsFormMolecule: React.FC<FormProps> = ({
 export default SettingsFormMolecule;
 
 type FormProps = {
-  formdata: {
-    test: string;
-    level: string;
-    choice: boolean;
-    done: boolean;
-    description: boolean;
-  };
+  formdata: MyForm;
   clearValue: (name: string) => void;
   handleChange: (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>

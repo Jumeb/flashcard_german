@@ -1,4 +1,6 @@
+import { MyForm } from "@/components/organism/Learn/Learn.organism";
 import ButtonAtom from "../Button/Button";
+import { SetStateAction } from "react";
 
 const Counter: React.FC<CounterProps> = ({ formdata, setFormdata }) => {
   const { done, score = 0, test = "0", counter = 0 } = formdata;
@@ -63,11 +65,6 @@ const Counter: React.FC<CounterProps> = ({ formdata, setFormdata }) => {
 export default Counter;
 
 type CounterProps = {
-  formdata: {
-    test: string;
-    score: number;
-    done: boolean;
-    counter: number;
-  };
-  setFormdata: (value: React.SetStateAction<T>) => void;
+  formdata: MyForm;
+  setFormdata: (value: SetStateAction<CounterProps["formdata"]>) => void;
 };

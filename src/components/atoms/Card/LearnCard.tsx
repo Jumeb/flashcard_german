@@ -1,3 +1,4 @@
+import { MyForm } from "@/components/organism/Learn/Learn.organism";
 import { Language } from "@/utils/assets/contants";
 import { SetStateAction } from "react";
 
@@ -66,13 +67,7 @@ export default LearnCard;
 
 type LearnCardProps = {
   dictionary: Language;
-  formdata: {
-    done: boolean;
-    adder: number;
-    test: string;
-    counter: number;
-    description: boolean;
-  };
+  formdata: MyForm;
   choice?: "en" | "de";
-  setFormdata: (value: SetStateAction<T>) => void;
+  setFormdata: (value: SetStateAction<MyForm>) => void;
 };

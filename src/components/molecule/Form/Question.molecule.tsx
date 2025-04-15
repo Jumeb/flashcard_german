@@ -3,6 +3,7 @@ import React, { SetStateAction } from "react";
 import Input from "@/components/atoms/Inputs/Input.component";
 import ButtonAtom from "@/components/atoms/Button/Button";
 import { Language } from "@/utils/assets/contants";
+import { MyForm } from "@/components/organism/Learn/Learn.organism";
 
 const QuestionFormMolecule: React.FC<FormProps> = ({
   formdata,
@@ -104,16 +105,7 @@ const QuestionFormMolecule: React.FC<FormProps> = ({
 export default QuestionFormMolecule;
 
 type FormProps = {
-  formdata: {
-    title: string;
-    example: string;
-    done: boolean;
-    counter: number;
-    adder: number;
-    score: number;
-    choice: boolean;
-    test: string;
-  };
+  formdata: MyForm;
   clearValue: (name: string) => void;
   handleChange: (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>

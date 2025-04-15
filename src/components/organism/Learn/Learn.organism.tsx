@@ -9,6 +9,19 @@ import { useForm } from "@/utils/hooks/useForm";
 import { getRandomItems } from "@/utils/libs/functions";
 import { useEffect, useState } from "react";
 
+export type MyForm = {
+  title: string;
+  example: string;
+  counter: number;
+  score: number;
+  test: string;
+  level: string;
+  choice: boolean;
+  done: boolean;
+  adder: number;
+  description: boolean;
+};
+
 const LearnOrganism = () => {
   const Language = germanEnglish;
   const {
@@ -18,7 +31,7 @@ const LearnOrganism = () => {
     clearValue,
     updateImage,
     setFormdata,
-  } = useForm({
+  } = useForm<MyForm>({
     //   choice: "de",
     title: "",
     example: "",
@@ -31,6 +44,7 @@ const LearnOrganism = () => {
     adder: 1,
     description: true,
   });
+
   const { counter = 0, test } = formdata;
   const [dictionary, setDictionary] = useState<Language[]>([]);
   useEffect(() => {
